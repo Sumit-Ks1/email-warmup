@@ -1,0 +1,22 @@
+_format_version: "2.1"
+
+services:
+  - name: rest
+    url: http://supabase-rest:3000
+    routes:
+      - name: rest-all
+        strip_path: true
+        paths:
+          - /rest/v1/
+    plugins:
+      - name: cors
+
+  - name: meta
+    url: http://supabase-meta:8080
+    routes:
+      - name: meta-all
+        strip_path: true
+        paths:
+          - /pg/
+    plugins:
+      - name: cors
